@@ -17,7 +17,7 @@ Aufgabe: die Designs im Ziel-Stack **nachbauen** — mit dessen bestehenden Must
 
 Öffnen Sie zum Ansehen `prototype/index.html` direkt im Browser.
 
-**Wichtig:** Dieser Stand entspricht der Version, die ins Repository `joerschleburg/vonvorteil.new` hochgeladen wurde. Spätere Detailänderungen (mobile Hero-Größen, vierzeiliger Zeilenumbruch der Headline) sind hier **nicht** enthalten — siehe „Offene Punkte".
+**Wichtig:** Der Prototyp enthält den mobilen Hero (vierzeilig, maximale Schrift an „Employer“, 18px Seitenrand unter ~710px). Desktop bleibt dreizeilig.
 
 ## Fidelity
 
@@ -121,7 +121,7 @@ background-clip: text;
 -webkit-text-fill-color: transparent;
 ```
 
-Text: `Die Employer<br />Branding<br />Agentur` (in dieser Version drei Zeilen).
+Text: `Die Employer<br />Branding<br />Agentur` auf Desktop (drei Zeilen). Unter ~710px vierzeilig: `Die / Employer / Branding / Agentur`.
 Das Bild ist **unbehandelt** — kein Helligkeits-, Kontrast- oder Sättigungsfilter, keine Overlays. Wichtig, das wurde mehrfach korrigiert.
 Fallback ohne `background-clip:text`-Support: Schrift in `#F6F2E8`, Bild unsichtbar.
 
@@ -240,7 +240,7 @@ Die Silben heben und stauchen sich nacheinander, dann 2 s Ruhe. Bitte `prefers-r
 
 **Hover-Zustände:** Links wechseln auf `#FF5A1F`; Nav-Labels von 55 % auf 100 % Deckkraft; Newsletter-Button von Orange auf Reispapier (Schrift bleibt Petrol); Blog-Einträge komplett auf Orange. Keine Unterstreichungen, keine Transform-Effekte.
 
-**Responsive:** Ein einspaltiges Layout über alle Breiten; alle Größen skalieren über `clamp()` mit `vw`. Es gibt keine Media Queries im Prototyp — beim Nachbau sind sie erlaubt und für den Hero nötig (siehe „Offene Punkte").
+**Responsive:** Ein einspaltiges Layout über alle Breiten; Größen skalieren über `clamp()` mit `vw`. Der Hero hat Media Queries unter ~710px: vierzeilige Headline, 18px Seitenrand, Schrift so groß wie das Wort „Employer“ in der verfügbaren Breite (und der Viewport-Höhe) zulässt.
 
 ## State Management
 
@@ -279,7 +279,7 @@ Die HTML-Dateien sind eigenständig (Assets als Data-URLs eingebettet) und funkt
 
 ## Offene Punkte
 
-1. **Mobiler Hero.** Nach diesem Stand wurde am Hero weitergearbeitet: auf schmalen Viewports (< ~710px) wächst die Headline auf bis zu 78px, der Seitenrand schrumpft auf 18px, und die Headline bricht vierzeilig (Die / Employer / Branding / Agentur). Beim Nachbau bitte gleich mit Media Queries lösen statt mit `min()`/`max()`-Verschachtelung. Achtung: „Employer" ist das längste Wort und bestimmt die maximale mobile Schriftgröße.
+1. **Mobiler Hero.** Im Prototyp umgesetzt: unter ~710px vierzeilige Headline, 18px Seitenrand, Schriftgröße per Messung an „Employer“ (so groß wie möglich, begrenzt durch Breite und Höhe). Desktop bleibt dreizeilig mit `clamp(64px,12.4vw,250px)`.
 2. **Rechtstexte** — Impressum, Datenschutz, AGB sind verlinkt, aber nicht geschrieben.
 3. **Weitere Cluster-Seiten** nach dem Muster von `fuer-ki-beratung.html`.
 4. **`llms.txt`, `robots.txt`, `sitemap.xml`, JSON-LD** — noch nicht angelegt, gehören aber zum Kern des Auftrags (Auffindbarkeit ist erklärtes Hauptziel).
