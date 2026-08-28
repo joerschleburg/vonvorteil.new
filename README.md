@@ -114,7 +114,7 @@ letter-spacing: -0.055em;
 color: #F6F2E8;                        /* Fallback */
 background-image: url(joerg-schleburg.png);
 background-size: cover;
-background-position: 50% 22%;
+background-position: 50% 32%;
 background-repeat: no-repeat;
 -webkit-background-clip: text;
 background-clip: text;
@@ -207,7 +207,7 @@ Alle Scroll-Effekte hängen an **einem** Scroll-Handler, der auf ~60 fps gedross
 
 Berechnungen pro Frame:
 
-1. **Hero-Porträt-Parallaxe** (`[data-parallax-bg]`, Attribut `data-parallax-bg="1.1"`, `data-bg-base="22"`):
+1. **Hero-Porträt-Parallaxe** (`[data-parallax-bg]`, Attribut `data-parallax-bg="1.1"`, `data-bg-base="32"`):
    Fortschritt `p = clamp((rect.top + rect.height/2 − vh/2) / vh, −1, 1)`, dann
    `backgroundPositionY = (base + p · speed · 34)%`, gerundet auf 0,5 % (Schreibvorgänge sparen).
 2. **Diagonale Überschiebung** der Kundenliste: `u = clamp((vh − rect.top) / (vh·0.9), 0, 1)`, geglättet mit `e = u²(3−2u)`, daraus
@@ -256,7 +256,7 @@ Für die Produktion zusätzlich nötig: Newsletter-Anbindung (Double-Opt-in, DSG
 
 | Datei | Herkunft | Verwendung |
 | --- | --- | --- |
-| `assets/joerg-schleburg.png` | vom Kunden geliefert | Porträt-Füllung der Hero-Headline, `background-position:50% 22%` |
+| `assets/joerg-schleburg.png` | vom Kunden geliefert | Porträt-Füllung der Hero-Headline, `background-position:50% 32%` |
 | `assets/vonvorteil_logo.png` | vom Kunden geliefert | Logo-Block über dem Footer, unverändert verwenden |
 
 Schrift: **Rubik** via Google Fonts (SIL Open Font License). Für die Produktion selbst hosten (WOFF2, `font-display:swap`) — das vermeidet den externen Request und ist datenschutzseitig sauberer. Benötigte Gewichte: 400, 500, 600, 700, 800, 900.
