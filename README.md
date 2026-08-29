@@ -140,7 +140,7 @@ Fallback ohne `background-clip:text`-Support: Schrift in `#F6F2E8`, Bild unsicht
 - H2 in **Orange** `#FF5A1F`: „IQ ist VonVorteil."
 - Absatz, `max-width:30ch`, Farbe `rgba(246,242,232,0.88)`, `text-wrap:pretty`:
 
-> Belastbare Daten. Ein geschulter Blick für das Besondere. Über Jahre aufgebaut, beides.
+> Die richtigen Daten. Ein geschulter Blick für das Besondere. Über Jahre aufgebaut, beides.
 > So entsteht ein Bild von Ihnen, das trägt – und Entscheidungen, die halten.
 
 #### 1.4 Kontakt (`id="kontakt"`)
