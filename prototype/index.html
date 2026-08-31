@@ -18,10 +18,12 @@ button{font-family:inherit}
 @keyframes vv-marquee{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
 @keyframes vv-say{0%,58%,100%{transform:translateY(0) scaleY(1)}64%{transform:translateY(-0.055em) scaleY(1.07)}72%{transform:translateY(0.03em) scaleY(0.93)}80%{transform:translateY(0) scaleY(1)}}
 @keyframes vv-dot{0%,60%,100%{transform:scale(1);opacity:1}70%{transform:scale(1.35);opacity:0.7}82%{transform:scale(1);opacity:1}}
+@property --vv-hero-grow{syntax:"<number>";inherits:false;initial-value:1}
+@keyframes vv-hero-grow{from{--vv-hero-grow:1}to{--vv-hero-grow:1.14}}
 
 :root{--vv-pad:40px;--vv-hero-pad-y:12vh;--vv-hero-pad-bot:12vh;--vv-hero-h:100vh;--vv-hero-justify:center;--vv-client-pull:-14vh;--vv-client-spacer:22vh;--vv-client-clip:14vh}
 .vv-hero-split{display:none}
-h1[data-parallax-bg]{position:relative;z-index:1;font-size:clamp(64px,12.4vw,250px)}
+h1[data-parallax-bg]{position:relative;z-index:1;font-size:clamp(64px,12.4vw,250px);--vv-hero-w:182%;--vv-hero-h:182%;--vv-hero-grow:1;background-size:calc(var(--vv-hero-w) * var(--vv-hero-grow)) calc(var(--vv-hero-h) * var(--vv-hero-grow));animation:vv-hero-grow 22s ease-out forwards}
 h1[data-parallax-bg] .vv-hero-line{-webkit-text-fill-color:transparent}
 .vv-hero-ghost{position:absolute;left:0;top:0;right:0;margin:0;z-index:2;font-size:clamp(64px,12.4vw,250px);font-weight:900;line-height:0.79;letter-spacing:-0.055em;text-transform:uppercase;color:#F6F2E8;-webkit-text-fill-color:#F6F2E8;opacity:0;pointer-events:none}
 [data-client-row] [data-display]{max-width:100%;overflow-wrap:break-word}
@@ -75,7 +77,7 @@ h1[data-parallax-bg] .vv-hero-line{-webkit-text-fill-color:transparent}
   </nav>
     <div data-hero-wrap="" style="position:relative">
     <h1 class="vv-hero-ghost" aria-hidden="true"><span class="vv-hero-line">Die</span><span class="vv-hero-join"> </span><br class="vv-hero-split"><span class="vv-hero-line">Employer</span><br><span class="vv-hero-line">Branding</span><br><span class="vv-hero-line">Agentur</span></h1>
-    <h1 data-parallax-bg="1.1" data-bg-base="20" style="margin:0;font-weight:900;line-height:0.79;letter-spacing:-0.055em;color:#F6F2E8;background-image:url('../assets/hero.jpg');background-size:182%;background-position:72% 20%;background-repeat:no-repeat;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent"><span class="vv-hero-line">Die</span><span class="vv-hero-join"> </span><br class="vv-hero-split"><span class="vv-hero-line">Employer</span><br><span class="vv-hero-line">Branding</span><br><span class="vv-hero-line">Agentur</span></h1>
+    <h1 data-parallax-bg="1.1" data-bg-base="20" style="margin:0;font-weight:900;line-height:0.79;letter-spacing:-0.055em;color:#F6F2E8;background-image:url('../assets/hero.jpg');background-position:72% 20%;background-repeat:no-repeat;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent"><span class="vv-hero-line">Die</span><span class="vv-hero-join"> </span><br class="vv-hero-split"><span class="vv-hero-line">Employer</span><br><span class="vv-hero-line">Branding</span><br><span class="vv-hero-line">Agentur</span></h1>
 
   </div>
 </section>
@@ -313,7 +315,8 @@ h1[data-parallax-bg] .vv-hero-line{-webkit-text-fill-color:transparent}
       var iw = 4000, ih = 2668, zoom = 1.82;
       var cover = Math.max(box.width / iw, box.height / ih);
       var s = cover * zoom;
-      h1.style.backgroundSize = (iw * s).toFixed(1) + "px " + (ih * s).toFixed(1) + "px";
+      h1.style.setProperty("--vv-hero-w", (iw * s).toFixed(1) + "px");
+      h1.style.setProperty("--vv-hero-h", (ih * s).toFixed(1) + "px");
     }
   };
   var onResize = function(){ fitHero(); onScroll(); };
