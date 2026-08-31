@@ -179,7 +179,7 @@ Fallback ohne `background-clip:text`-Support: Schrift in `#F6F2E8`, Bild unsicht
 
 #### 1.8 Footer
 
-`padding:56px 40px`, Flex, `flex-wrap:wrap`, `gap:24px`, `justify-content:space-between`. Links: Wortmarke „VonVorteil" (`17px/800`, `letter-spacing:-0.03em`, `#F6F2E8`). Rechts: Linkgruppe `gap:24px`, `14px` — Kontakt (Anker `#kontakt`), Impressum, Datenschutz, AGB. Farbe geerbt (`rgba(246,242,232,0.68)`), Hover Orange.
+`padding:56px 40px`, Flex, `flex-wrap:wrap`, `gap:24px`, `justify-content:space-between`. Links: Wortmarke „VonVorteil" (`17px/800`, `letter-spacing:-0.03em`, `#F6F2E8`). Rechts: Linkgruppe `gap:24px`, `14px` — Kontakt (Anker `#kontakt`), Impressum (`impressum.html`), Datenschutz (`datenschutz.html`), AGB (`agb.html`). Farbe geerbt (`rgba(246,242,232,0.68)`), Hover Orange. Die Rechtstexte entsprechen der aktuellen Website (Impressum und Datenschutz als HTML, AGB zusätzlich als PDF `assets/VonVorteil-AGB_2022.pdf`).
 
 ### 2. Für KI (`prototype/fuer-ki.html`)
 
@@ -271,8 +271,12 @@ prototype/fuer-ki.html           KI-/SEO-Hub
 prototype/fuer-ki-beratung.html  Cluster-Muster
 prototype/blog.html              Blog-Übersicht
 prototype/artikel.html           Artikelvorlage
+prototype/impressum.html         Impressum (Stand aktuelle Website)
+prototype/datenschutz.html       Datenschutzerklärung (Stand aktuelle Website)
+prototype/agb.html               AGB Stand 2022 (Stand aktuelle Website)
 assets/joerg-schleburg.png       Porträt
 assets/vonvorteil_logo.png       Logo
+assets/VonVorteil-AGB_2022.pdf   AGB-Original als PDF
 ```
 
 Die HTML-Dateien sind eigenständig (Assets als Data-URLs eingebettet) und funktionieren offline. Die Assets liegen zusätzlich separat bei, weil die eingebetteten Varianten für den Nachbau unbrauchbar sind.
@@ -280,7 +284,7 @@ Die HTML-Dateien sind eigenständig (Assets als Data-URLs eingebettet) und funkt
 ## Offene Punkte
 
 1. **Mobiler Hero.** Im Prototyp umgesetzt: unter ~710px vierzeilige Headline, 18px Seitenrand, Schriftgröße per Messung an „Employer“ (so groß wie möglich, begrenzt durch Breite und Höhe). Desktop bleibt dreizeilig mit `clamp(64px,12.4vw,250px)`.
-2. **Rechtstexte** — Impressum, Datenschutz, AGB sind verlinkt, aber nicht geschrieben.
+2. **Rechtstexte** — Impressum, Datenschutz und AGB sind aus der aktuellen Website übernommen (`prototype/impressum.html`, `datenschutz.html`, `agb.html`). Adresse im Impressum: Rundfunkplatz 2; in der Datenschutzerklärung steht weiterhin Wredestr. 7 — so auf der Live-Seite.
 3. **Weitere Cluster-Seiten** nach dem Muster von `fuer-ki-beratung.html`.
 4. **`llms.txt`, `robots.txt`, `sitemap.xml`, JSON-LD** — noch nicht angelegt, gehören aber zum Kern des Auftrags (Auffindbarkeit ist erklärtes Hauptziel).
 5. **Blog-Migration** — die Beiträge der alten Website übernehmen, URL-Struktur und Weiterleitungen klären.
