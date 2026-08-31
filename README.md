@@ -187,9 +187,9 @@ Der maschinenlesbare Zugang. Gleiche Farbfläche und Schrift, aber bewusst nüch
 
 Beim Nachbau relevant: Diese Seite braucht echtes semantisches Markup (`<article>`, `<section>`, `<dl>`, korrekte Heading-Reihenfolge), JSON-LD (`Organization`, `Person`, `FAQPage`, `Article`), sowie `llms.txt` und Sitemap. Das ist Geschäftsziel, nicht Beiwerk.
 
-### 3. Cluster-Seite (`prototype/fuer-ki-beratung.html`)
+### 3. Cluster-Seiten (`prototype/fuer-ki-*.html`)
 
-Muster für die Themencluster unterhalb des KI-Hubs (Beispiel: Employer-Branding-Beratung). Als Vorlage für die weiteren Cluster gedacht: Employer Branding, Employer-Branding-Agentur, Arbeitgeberpositionierung, EVP, Employer-Branding-Strategie, Kampagnen, Karriereseiten, Arbeitgeberkommunikation, Workshops.
+Sechs Themen unterhalb des KI-Hubs, gleiche Struktur: Leistungskern, wann sinnvoll, Ablauf, Verantwortung, verwandte Themen, die drei aktuellsten Blogbeiträge. Employer-Branding-Beratung · Arbeitgeberpositionierung · EVP · Kampagnen · Karriereseiten · Workshops und Coaching.
 
 ### 4. Blog-Übersicht (`prototype/blog.html`)
 
@@ -268,7 +268,12 @@ Keine Icons, keine Illustrationen, keine Emoji. Für „mehr"-Verweise ausschlie
 ```
 prototype/index.html             Startseite (Hauptreferenz)
 prototype/fuer-ki.html           KI-/SEO-Hub
-prototype/fuer-ki-beratung.html  Cluster-Muster
+prototype/fuer-ki-beratung.html  Cluster: Employer-Branding-Beratung
+prototype/fuer-ki-positionierung.html  Cluster: Arbeitgeberpositionierung
+prototype/fuer-ki-evp.html       Cluster: Employer Value Proposition
+prototype/fuer-ki-kampagnen.html Cluster: Employer-Branding-Kampagnen
+prototype/fuer-ki-karriereseiten.html Cluster: Karriereseiten
+prototype/fuer-ki-workshops.html Cluster: Workshops und Coaching
 prototype/blog.html              Blog-Übersicht
 prototype/artikel.html           Artikelvorlage
 prototype/impressum.html         Impressum (Stand aktuelle Website)
@@ -285,7 +290,7 @@ Die HTML-Dateien sind eigenständig (Assets als Data-URLs eingebettet) und funkt
 
 1. **Mobiler Hero.** Im Prototyp umgesetzt: unter ~710px vierzeilige Headline, 18px Seitenrand, Schriftgröße per Messung an „Employer“ (so groß wie möglich, begrenzt durch Breite und Höhe). Desktop bleibt dreizeilig mit `clamp(64px,12.4vw,250px)`.
 2. **Rechtstexte** — Impressum, Datenschutz und AGB sind aus der aktuellen Website übernommen (`prototype/impressum.html`, `datenschutz.html`, `agb.html`). Anschrift überall: Rundfunkplatz 2, 80335 München.
-3. **Weitere Cluster-Seiten** nach dem Muster von `fuer-ki-beratung.html`.
+3. **Cluster-Seiten** — die sechs Themen unter „Themen im Detail“ sind angelegt und untereinander verlinkt. Wissen auf den Cluster-Seiten: die drei aktuellsten Beiträge (ohne Agentur, Förster, Lotter). ASANTIAL gehört nicht auf die Seite.
 4. **`llms.txt`, `robots.txt`, `sitemap.xml`, JSON-LD** — noch nicht angelegt, gehören aber zum Kern des Auftrags (Auffindbarkeit ist erklärtes Hauptziel).
 5. **Blog-Migration** — die Beiträge der alten Website übernehmen, URL-Struktur und Weiterleitungen klären.
 6. **Newsletter-Backend** und Double-Opt-in.
