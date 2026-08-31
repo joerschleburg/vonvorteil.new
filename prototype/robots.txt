@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://joerschleburg.github.io/vonvorteil.new/prototype/sitemap.xml

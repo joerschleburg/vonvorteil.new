@@ -1,0 +1,9 @@
+# VonVorteil
+
+> Employer-Branding-Agentur in München.
+
+Die Seiten liegen unter `/prototype/`.
+
+## Pages
+
+- [Seitenindex](https://joerschleburg.github.io/vonvorteil.new/prototype/llms.txt): Leistungen, Wissens-Hubs und Blog.

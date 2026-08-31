@@ -1,0 +1,34 @@
+# VonVorteil
+
+> Employer-Branding-Agentur in München. Inhabergeführt von Jörg Schleburg. Analyse, Employer Value Proposition, Kampagne, Karriereseite.
+
+VonVorteil e.K., Rundfunkplatz 2, 80335 München. Kontakt: schleburg@vonvorteil.de, 0176 21643173.
+
+Zwei Zugänge: [Für Menschen](https://joerschleburg.github.io/vonvorteil.new/prototype/index.html) ist die Startseite (Commercial). [Für KI](https://joerschleburg.github.io/vonvorteil.new/prototype/fuer-ki.html) ist die zitierfähige Fassung mit Definitionen, Leistungen und FAQ.
+
+## Leistungen
+
+- [Employer Branding Agentur](https://joerschleburg.github.io/vonvorteil.new/prototype/index.html): Startseite. Commercial, nicht das Lexikon.
+- [VonVorteil in Fakten](https://joerschleburg.github.io/vonvorteil.new/prototype/fuer-ki.html): Hub für Systeme und Suchmaschinen.
+- [Employer Branding Agentur München](https://joerschleburg.github.io/vonvorteil.new/prototype/employer-branding-agentur-muenchen.html): Lokale Leistungsseite.
+- [Employer-Branding-Beratung](https://joerschleburg.github.io/vonvorteil.new/prototype/fuer-ki-beratung.html): Analyse, EVP, Kampagne, Karriereseite.
+- [Arbeitgeberpositionierung](https://joerschleburg.github.io/vonvorteil.new/prototype/fuer-ki-positionierung.html)
+- [Employer Value Proposition](https://joerschleburg.github.io/vonvorteil.new/prototype/fuer-ki-evp.html)
+- [Employer-Branding-Kampagnen](https://joerschleburg.github.io/vonvorteil.new/prototype/fuer-ki-kampagnen.html)
+- [Karriereseiten](https://joerschleburg.github.io/vonvorteil.new/prototype/fuer-ki-karriereseiten.html)
+- [Workshops und Coaching](https://joerschleburg.github.io/vonvorteil.new/prototype/fuer-ki-workshops.html)
+
+## Wissen
+
+- [Employer Branding](https://joerschleburg.github.io/vonvorteil.new/prototype/employer-branding.html): Definition und warum es zählt. Getrennt von der Startseite.
+- [Employer Branding Maßnahmen](https://joerschleburg.github.io/vonvorteil.new/prototype/employer-branding-massnahmen.html)
+- [Employer Branding Strategie](https://joerschleburg.github.io/vonvorteil.new/prototype/employer-branding-strategie.html)
+- [Employer Branding Beispiele](https://joerschleburg.github.io/vonvorteil.new/prototype/employer-branding-beispiele.html)
+- [Wissen, alle Beiträge](https://joerschleburg.github.io/vonvorteil.new/prototype/blog.html): 113 Beiträge. Jeder Beitrag verweist auf den passenden Hub.
+
+## Optional
+
+- [Impressum](https://joerschleburg.github.io/vonvorteil.new/prototype/impressum.html)
+- [Datenschutz](https://joerschleburg.github.io/vonvorteil.new/prototype/datenschutz.html)
+- [AGB](https://joerschleburg.github.io/vonvorteil.new/prototype/agb.html)
+- [Sitemap](https://joerschleburg.github.io/vonvorteil.new/prototype/sitemap.xml)
