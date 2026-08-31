@@ -284,7 +284,7 @@ Die HTML-Dateien sind eigenständig (Assets als Data-URLs eingebettet) und funkt
 ## Offene Punkte
 
 1. **Mobiler Hero.** Im Prototyp umgesetzt: unter ~710px vierzeilige Headline, 18px Seitenrand, Schriftgröße per Messung an „Employer“ (so groß wie möglich, begrenzt durch Breite und Höhe). Desktop bleibt dreizeilig mit `clamp(64px,12.4vw,250px)`.
-2. **Rechtstexte** — Impressum, Datenschutz und AGB sind aus der aktuellen Website übernommen (`prototype/impressum.html`, `datenschutz.html`, `agb.html`). Adresse im Impressum: Rundfunkplatz 2; in der Datenschutzerklärung steht weiterhin Wredestr. 7 — so auf der Live-Seite.
+2. **Rechtstexte** — Impressum, Datenschutz und AGB sind aus der aktuellen Website übernommen (`prototype/impressum.html`, `datenschutz.html`, `agb.html`). Anschrift überall: Rundfunkplatz 2, 80335 München.
 3. **Weitere Cluster-Seiten** nach dem Muster von `fuer-ki-beratung.html`.
 4. **`llms.txt`, `robots.txt`, `sitemap.xml`, JSON-LD** — noch nicht angelegt, gehören aber zum Kern des Auftrags (Auffindbarkeit ist erklärtes Hauptziel).
 5. **Blog-Migration** — die Beiträge der alten Website übernehmen, URL-Struktur und Weiterleitungen klären.
