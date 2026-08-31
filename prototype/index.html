@@ -74,7 +74,7 @@ h1[data-parallax-bg] .vv-hero-line{-webkit-text-fill-color:transparent}
   </nav>
     <div data-hero-wrap="" style="position:relative">
     <h1 class="vv-hero-ghost" aria-hidden="true"><span class="vv-hero-line">Die</span><span class="vv-hero-join"> </span><br class="vv-hero-split"><span class="vv-hero-line">Employer</span><br><span class="vv-hero-line">Branding</span><br><span class="vv-hero-line">Agentur</span></h1>
-    <h1 data-parallax-bg="1.1" data-bg-base="40" style="margin:0;font-weight:900;line-height:0.79;letter-spacing:-0.055em;color:#F6F2E8;background-image:url('../assets/hero.png');background-size:cover;background-position:52% 40%;background-repeat:no-repeat;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent"><span class="vv-hero-line">Die</span><span class="vv-hero-join"> </span><br class="vv-hero-split"><span class="vv-hero-line">Employer</span><br><span class="vv-hero-line">Branding</span><br><span class="vv-hero-line">Agentur</span></h1>
+    <h1 data-parallax-bg="1.1" data-bg-base="38" style="margin:0;font-weight:900;line-height:0.79;letter-spacing:-0.055em;color:#F6F2E8;background-image:url('../assets/hero.png');background-size:135%;background-position:72% 38%;background-repeat:no-repeat;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent"><span class="vv-hero-line">Die</span><span class="vv-hero-join"> </span><br class="vv-hero-split"><span class="vv-hero-line">Employer</span><br><span class="vv-hero-line">Branding</span><br><span class="vv-hero-line">Agentur</span></h1>
 
   </div>
 </section>
@@ -284,27 +284,35 @@ h1[data-parallax-bg] .vv-hero-line{-webkit-text-fill-color:transparent}
     var h1 = document.querySelector("h1[data-parallax-bg]");
     if (!h1) return;
     var desktop = window.matchMedia("(min-width: 710px)").matches;
-    h1.setAttribute("data-bg-base", "40");
+    h1.setAttribute("data-bg-base", "38");
     h1.dataset.lastY = "";
     var ghost = document.querySelector(".vv-hero-ghost");
     if (desktop) {
       h1.style.fontSize = "";
       if (ghost) ghost.style.fontSize = "";
-      return;
+    } else {
+      var cs = getComputedStyle(h1);
+      var wrap = h1.parentElement || h1;
+      var availW = Math.max(120, wrap.getBoundingClientRect().width);
+      var probe = document.createElement("span");
+      probe.textContent = "Employer";
+      probe.style.cssText = "position:absolute;left:-9999px;top:0;visibility:hidden;white-space:nowrap;font-family:" + cs.fontFamily + ";font-weight:900;font-size:100px;letter-spacing:-0.055em;text-transform:uppercase";
+      document.body.appendChild(probe);
+      var measured = probe.getBoundingClientRect().width;
+      probe.remove();
+      if (measured) {
+        var px = (Math.floor((availW / measured) * 100 * 100) / 100) + "px";
+        h1.style.fontSize = px;
+        if (ghost) ghost.style.fontSize = px;
+      }
     }
-    var cs = getComputedStyle(h1);
-    var wrap = h1.parentElement || h1;
-    var availW = Math.max(120, wrap.getBoundingClientRect().width);
-    var probe = document.createElement("span");
-    probe.textContent = "Employer";
-    probe.style.cssText = "position:absolute;left:-9999px;top:0;visibility:hidden;white-space:nowrap;font-family:" + cs.fontFamily + ";font-weight:900;font-size:100px;letter-spacing:-0.055em;text-transform:uppercase";
-    document.body.appendChild(probe);
-    var measured = probe.getBoundingClientRect().width;
-    probe.remove();
-    if (!measured) return;
-    var px = (Math.floor((availW / measured) * 100 * 100) / 100) + "px";
-    h1.style.fontSize = px;
-    if (ghost) ghost.style.fontSize = px;
+    var box = h1.getBoundingClientRect();
+    if (box.width && box.height) {
+      var iw = 1024, ih = 682, zoom = 1.35;
+      var cover = Math.max(box.width / iw, box.height / ih);
+      var s = cover * zoom;
+      h1.style.backgroundSize = (iw * s).toFixed(1) + "px " + (ih * s).toFixed(1) + "px";
+    }
   };
   var onResize = function(){ fitHero(); onScroll(); };
   window.addEventListener("scroll", onScroll, { passive: true });
