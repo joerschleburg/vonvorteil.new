@@ -21,6 +21,42 @@
   height: auto;
 }
 
+/* Main navigation: vertical, top right, same as the homepage hero. */
+.page > nav,
+.wrap > nav {
+  position: absolute;
+  top: 44px;
+  right: 34px;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  gap: 22px;
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.page > nav > *,
+.wrap > nav > * {
+  writing-mode: vertical-rl;
+  white-space: nowrap;
+}
+
+.page > nav a:hover,
+.wrap > nav a:hover {
+  color: #F6F2E8;
+}
+
+@media (max-width: 1240px) {
+  .page,
+  .wrap {
+    padding-right: 80px;
+  }
+}
+
 @media (max-width: 900px) {
   .body table {
     display: block;
@@ -32,6 +68,27 @@
 }
 
 @media (max-width: 709.98px) {
+  .page > nav,
+  .wrap > nav {
+    top: 16px;
+    right: 10px;
+    gap: 16px;
+    font-size: 15px;
+  }
+
+  .page > nav > *,
+  .wrap > nav > * {
+    display: inline-block;
+    box-sizing: border-box;
+    min-width: 24px;
+    padding: 4px 6px;
+  }
+
+  .page,
+  .wrap {
+    padding-right: 48px;
+  }
+
   .page h1,
   .wrap h1 {
     font-size: clamp(28px, 8.2vw, 42px);
