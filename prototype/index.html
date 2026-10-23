@@ -58,6 +58,8 @@ h1[data-parallax-bg] .vv-hero-line{-webkit-text-fill-color:transparent}
 [data-screen-label="Hero"] nav a:hover{color:#F6F2E8 !important}
 [data-screen-label="Wissen"] a:hover{color:#FF5A1F !important}
 [data-screen-label="Beratung"] a:hover{color:#F6F2E8 !important}
+.vv-word{opacity:0.18;transition:opacity 0.35s ease-out}
+.vv-word.on{opacity:1}
 #nl-form button:hover{background:#F6F2E8}
 #nl-mail::placeholder{color:rgba(246,242,232,0.45)}
 @media (prefers-reduced-motion: reduce){
@@ -230,6 +232,28 @@ h1[data-parallax-bg] .vv-hero-line{-webkit-text-fill-color:transparent}
     });
   }
 
+  var beratung = document.querySelector('[data-screen-label="Beratung"]');
+  var words = [];
+  var litCount = -1;
+  if (beratung && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    var walker = document.createTreeWalker(beratung, NodeFilter.SHOW_TEXT);
+    var textNodes = [];
+    while (walker.nextNode()) if (walker.currentNode.nodeValue.trim()) textNodes.push(walker.currentNode);
+    textNodes.forEach(function(node){
+      var frag = document.createDocumentFragment();
+      node.nodeValue.split(/([ \t\n\r]+)/).forEach(function(part){
+        if (!part) return;
+        if (/^[ \t\n\r]+$/.test(part)) { frag.appendChild(document.createTextNode(part)); return; }
+        var w = document.createElement("span");
+        w.className = "vv-word";
+        w.textContent = part;
+        frag.appendChild(w);
+        words.push(w);
+      });
+      node.parentNode.replaceChild(frag, node);
+    });
+  }
+
   var tick = function(){
     var vh = window.innerHeight;
     var cl = function(x){ return Math.max(0, Math.min(1, x)); };
@@ -243,6 +267,15 @@ h1[data-parallax-bg] .vv-hero-line{-webkit-text-fill-color:transparent}
       float.style.opacity = show ? "1" : "0";
       float.style.pointerEvents = show ? "auto" : "none";
       float.style.transition = "opacity 220ms ease-out";
+    }
+    if (words.length) {
+      var text = beratung.firstElementChild.getBoundingClientRect();
+      var progress = cl((vh * 0.85 - text.top) / (text.height + vh * 0.25));
+      var lit = Math.round(progress * words.length);
+      if (lit !== litCount) {
+        litCount = lit;
+        words.forEach(function(w, i){ w.classList.toggle("on", i < lit); });
+      }
     }
     var hero = document.querySelector('[data-screen-label="Hero"]');
     var claim = document.querySelector('[data-screen-label="Kundenliste"]');
