@@ -1,0 +1,61 @@
+/* Mobile overflow: long compounds, fact list, wide tables.
+   Homepage hero is outside .page/.wrap and keeps its own type size. */
+
+.page,
+.wrap {
+  overflow-wrap: break-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+.page a,
+.wrap a {
+  overflow-wrap: anywhere;
+}
+
+.page img,
+.wrap img,
+.page video,
+.page iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 900px) {
+  .body table {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@media (max-width: 709.98px) {
+  .page h1,
+  .wrap h1 {
+    font-size: clamp(28px, 8.2vw, 42px);
+  }
+
+  .body h2 {
+    font-size: clamp(22px, 6.2vw, 32px);
+  }
+
+  .list .t,
+  .wissen .t {
+    font-size: clamp(24px, 7vw, 40px);
+  }
+
+  .page dl {
+    grid-template-columns: 1fr;
+    gap: 4px 0;
+  }
+
+  .page dl dt {
+    margin-top: 16px;
+  }
+
+  .page dl dt:first-of-type {
+    margin-top: 0;
+  }
+}

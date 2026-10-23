@@ -23,13 +23,15 @@ button{font-family:inherit}
 
 :root{--vv-pad:40px;--vv-hero-pad-y:12vh;--vv-hero-pad-bot:12vh;--vv-hero-h:100vh;--vv-hero-justify:center;--vv-client-pull:-14vh;--vv-client-spacer:22vh;--vv-client-clip:14vh}
 .vv-hero-split{display:none}
-h1[data-parallax-bg]{position:relative;z-index:1;font-size:clamp(64px,12.4vw,250px);--vv-hero-w:182%;--vv-hero-h:182%;--vv-hero-grow:1;background-size:calc(var(--vv-hero-w) * var(--vv-hero-grow)) calc(var(--vv-hero-h) * var(--vv-hero-grow));animation:vv-hero-grow 22s ease-out forwards}
+h1[data-parallax-bg]{position:relative;z-index:1;font-size:clamp(64px,12.4vw,250px);--vv-hero-w:182%;--vv-hero-h:182%;--vv-hero-grow:1;background-image:image-set(url("../assets/hero.webp") type("image/webp"), url("../assets/hero-desktop.jpg") type("image/jpeg"));background-size:calc(var(--vv-hero-w) * var(--vv-hero-grow)) calc(var(--vv-hero-h) * var(--vv-hero-grow));animation:vv-hero-grow 22s ease-out forwards}
 h1[data-parallax-bg] .vv-hero-line{-webkit-text-fill-color:transparent}
 .vv-hero-ghost{position:absolute;left:0;top:0;right:0;margin:0;z-index:2;font-size:clamp(64px,12.4vw,250px);font-weight:900;line-height:0.79;letter-spacing:-0.055em;text-transform:uppercase;color:#F6F2E8;-webkit-text-fill-color:#F6F2E8;opacity:0;pointer-events:none}
 [data-client-row] [data-display]{max-width:100%;overflow-wrap:break-word}
 @media (max-width:709.98px){
   :root{--vv-pad:18px;--vv-hero-pad-y:10vh;--vv-hero-pad-bot:10vh;--vv-hero-h:100svh;--vv-hero-justify:center;--vv-client-pull:-30vh;--vv-client-spacer:12vh;--vv-client-clip:6vh}
-  [data-screen-label="Hero"] nav{top:16px !important;right:10px !important;gap:12px !important;font-size:13px !important}
+  [data-screen-label="Hero"] nav{top:16px !important;right:10px !important;gap:16px !important;font-size:15px !important}
+  [data-screen-label="Hero"] nav a,
+  [data-screen-label="Hero"] nav span{display:inline-block;box-sizing:border-box;min-width:24px;padding:4px 6px}
   .vv-hero-split{display:none}
   .vv-hero-join{display:none}
   h1[data-parallax-bg]{line-height:0.79}
@@ -42,9 +44,10 @@ h1[data-parallax-bg] .vv-hero-line{-webkit-text-fill-color:transparent}
   [data-screen-label="Kontakt"] h2{font-size:clamp(36px,11.2vw,168px) !important;max-width:none}
   a[href^="mailto"]{font-size:clamp(18px,5.6vw,84px) !important;overflow-wrap:anywhere;max-width:100%}
   a[href^="tel"]{font-size:clamp(22px,7.2vw,104px) !important}
-  [data-screen-label="Wissen"] [data-display]{font-size:clamp(22px,7vw,76px) !important}
+  [data-screen-label="Wissen"] [data-display]{font-size:clamp(22px,7vw,76px) !important;overflow-wrap:break-word;hyphens:auto}
   [data-screen-label="Newsletter"] h2{font-size:clamp(28px,9.6vw,120px) !important}
   [data-screen-label="Newsletter"] input{flex:1 1 100% !important}
+  h1[data-parallax-bg]{background-image:image-set(url("../assets/hero-sm.webp") type("image/webp"), url("../assets/hero-sm.jpg") type("image/jpeg")) !important}
   footer{row-gap:16px}
   footer > div{flex-wrap:wrap;gap:16px !important}
 }
@@ -55,6 +58,7 @@ h1[data-parallax-bg] .vv-hero-line{-webkit-text-fill-color:transparent}
 [data-screen-label="Hero"] nav a:hover,
 [data-screen-label="Hero"] nav span:hover{color:#F6F2E8 !important}
 [data-screen-label="Wissen"] a:hover{color:#FF5A1F !important}
+[data-screen-label="Beratung"] a:hover{color:#F6F2E8 !important}
 #nl-form button:hover{background:#F6F2E8}
 #nl-mail::placeholder{color:rgba(246,242,232,0.45)}
 @media (prefers-reduced-motion: reduce){
@@ -62,6 +66,7 @@ h1[data-parallax-bg] .vv-hero-line{-webkit-text-fill-color:transparent}
 }
 
 </style>
+<link rel="stylesheet" href="vv-mobile.css">
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://www.vonvorteil.de/#organization", "name": "VonVorteil e.K.", "alternateName": "VonVorteil", "url": "https://www.vonvorteil.de/", "email": "schleburg@vonvorteil.de", "telephone": "+49 176 21643173", "founder": {"@type": "Person", "name": "Jörg Schleburg", "jobTitle": "Inhaber"}, "address": {"@type": "PostalAddress", "streetAddress": "Rundfunkplatz 2", "postalCode": "80335", "addressLocality": "München", "addressCountry": "DE"}}, {"@type": "LocalBusiness", "@id": "https://www.vonvorteil.de/#localbusiness", "name": "VonVorteil", "alternateName": "Employer Branding Agentur München", "url": "https://www.vonvorteil.de/", "email": "schleburg@vonvorteil.de", "telephone": "+49 176 21643173", "address": {"@type": "PostalAddress", "streetAddress": "Rundfunkplatz 2", "postalCode": "80335", "addressLocality": "München", "addressCountry": "DE"}, "areaServed": {"@type": "City", "name": "München"}, "parentOrganization": {"@id": "https://www.vonvorteil.de/#organization"}}]}
 </script>
@@ -78,8 +83,8 @@ h1[data-parallax-bg] .vv-hero-line{-webkit-text-fill-color:transparent}
     <a href="blog.html" style="writing-mode:vertical-rl;white-space:nowrap;color:rgba(246,242,232,0.55)" style-hover="color:#F6F2E8">Wissen</a>
   </nav>
     <div data-hero-wrap="" style="position:relative">
-    <h1 class="vv-hero-ghost" aria-hidden="true"><span class="vv-hero-line">Die</span><span class="vv-hero-join"> </span><br class="vv-hero-split"><span class="vv-hero-line">Employer</span><br><span class="vv-hero-line">Branding</span><br><span class="vv-hero-line">Agentur</span></h1>
-    <h1 data-parallax-bg="1.1" data-bg-base="20" style="margin:0;font-weight:900;line-height:0.79;letter-spacing:-0.055em;color:#F6F2E8;background-image:url('../assets/hero.jpg');background-position:72% 20%;background-repeat:no-repeat;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent"><span class="vv-hero-line">Die</span><span class="vv-hero-join"> </span><br class="vv-hero-split"><span class="vv-hero-line">Employer</span><br><span class="vv-hero-line">Branding</span><br><span class="vv-hero-line">Agentur</span></h1>
+    <div class="vv-hero-ghost" aria-hidden="true"><span class="vv-hero-line">Die</span><span class="vv-hero-join"> </span><br class="vv-hero-split"><span class="vv-hero-line">Employer</span><br><span class="vv-hero-line">Branding</span><br><span class="vv-hero-line">Agentur</span></div>
+    <h1 data-parallax-bg="1.1" data-bg-base="20" style="margin:0;font-weight:900;line-height:0.79;letter-spacing:-0.055em;color:#F6F2E8;background-position:72% 20%;background-repeat:no-repeat;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent"><span class="vv-hero-line">Die</span><span class="vv-hero-join"> </span><br class="vv-hero-split"><span class="vv-hero-line">Employer</span><br><span class="vv-hero-line">Branding</span><br><span class="vv-hero-line">Agentur</span></h1>
 
   </div>
 </section>
@@ -141,6 +146,14 @@ h1[data-parallax-bg] .vv-hero-line{-webkit-text-fill-color:transparent}
 <section data-screen-label="Statement" style="min-height:100vh;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;gap:56px;background:#123430;color:#F6F2E8;padding:14vh var(--vv-pad)">
   <h2 style="margin:0;max-width:16ch;font-size:clamp(48px,10vw,190px);font-weight:900;line-height:0.86;letter-spacing:-0.05em;color:#FF5A1F">IQ ist VonVorteil.</h2>
   <p style="margin:0;max-width:30ch;font-size:clamp(26px,3.1vw,52px);font-weight:500;line-height:1.28;letter-spacing:-0.015em;color:rgba(246,242,232,0.88);text-wrap:pretty">Die richtigen Daten. Ein geschulter Blick für das Besondere. Über Jahre aufgebaut, beides.<br><br>So entsteht ein Bild von Ihnen, das trägt – und Entscheidungen, die halten.</p>
+</section>
+
+<section data-screen-label="Beratung" style="box-sizing:border-box;background:#123430;color:#F6F2E8;padding:12vh var(--vv-pad)">
+  <div style="max-width:40ch;display:flex;flex-direction:column;gap:1.15em;font-size:clamp(22px,2.2vw,32px);font-weight:500;line-height:1.4;letter-spacing:-0.015em;color:rgba(246,242,232,0.88);text-wrap:pretty;overflow-wrap:break-word">
+    <p style="margin:0">Sie wissen, dass Ihr Unternehmen ein guter Arbeitgeber ist. Aber was genau macht Sie aus? Und wie zeigen Sie das so, dass die Richtigen es erkennen? Unsere <a href="fuer-ki-beratung.html" style="color:#FF5A1F">Beratung</a> klärt das mit Ihnen, bevor irgendetwas gestaltet wird: wofür Sie als Arbeitgeber stehen und was Ihre Mitarbeitenden bei Ihnen tatsächlich erleben.</p>
+    <p style="margin:0">Sie gewinnen einen klaren Blick auf sich selbst und eine <a href="employer-branding-strategie.html" style="color:#FF5A1F">Strategie</a>, die zur Grundlage für alles Weitere wird. Damit Sie ein noch besserer Arbeitgeber werden und sich genau so zeigen.</p>
+    <p style="margin:0"><a href="blog/employer-branding-these-talente-setzen-nicht-auf-gute-werbung-sondern-auf-gute-arbeitgeber.html" style="color:#FF5A1F">Denn Talente entscheiden sich nicht für gute Werbung, sondern für gute Arbeitgeber.</a></p>
+  </div>
 </section>
 
 <section id="kontakt" data-screen-label="Kontakt" style="min-height:100vh;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;gap:64px;background:#123430;color:#F6F2E8;padding:14vh var(--vv-pad)">
